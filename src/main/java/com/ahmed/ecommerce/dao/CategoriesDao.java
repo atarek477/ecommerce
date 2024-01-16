@@ -19,11 +19,22 @@ public class CategoriesDao implements ICategories{
 
     @Override
     public List<Categories> getAllCategoriesDao() {
-        return null;
+        var sql = """
+                SELECT id,name FROM categories
+                """;
+
+
+        return jdbcTemplate.query(sql, categoriesRawMapper) ;
     }
 
     @Override
     public void insertCategoriesDao(Categories categories) {
+
+        var sql = """
+                INSERT INTO categories (name) VALUES (?)
+                """;
+        jdbcTemplate.update(sql,categories.getName());
+
 
     }
 }

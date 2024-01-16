@@ -1,6 +1,6 @@
-package com.ahmed.ecommerce.Controllers;
+package com.ahmed.ecommerce.controllers;
 
-import com.ahmed.ecommerce.Services.CategoriesServices;
+import com.ahmed.ecommerce.services.CategoriesServices;
 import com.ahmed.ecommerce.model.Categories;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

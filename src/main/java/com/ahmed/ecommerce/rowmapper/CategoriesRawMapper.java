@@ -1,7 +1,6 @@
-package com.ahmed.ecommerce.RowMapper;
+package com.ahmed.ecommerce.rowmapper;
 
 import com.ahmed.ecommerce.model.Categories;
-import com.ahmed.ecommerce.model.Product;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 

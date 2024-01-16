@@ -1,4 +1,4 @@
-package com.ahmed.ecommerce.RowMapper;
+package com.ahmed.ecommerce.rowmapper;
 
 import com.ahmed.ecommerce.model.Product;
 import org.springframework.jdbc.core.RowMapper;

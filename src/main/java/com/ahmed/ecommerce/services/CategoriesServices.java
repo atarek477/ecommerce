@@ -1,8 +1,7 @@
-package com.ahmed.ecommerce.Services;
+package com.ahmed.ecommerce.services;
 
 import com.ahmed.ecommerce.dao.ICategories;
 import com.ahmed.ecommerce.model.Categories;
-import com.ahmed.ecommerce.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

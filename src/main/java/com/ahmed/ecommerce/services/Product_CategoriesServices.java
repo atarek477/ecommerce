@@ -1,4 +1,4 @@
-package com.ahmed.ecommerce.Services;
+package com.ahmed.ecommerce.services;
 
 import com.ahmed.ecommerce.dao.IProduct_Categories;
 import com.ahmed.ecommerce.model.Product;

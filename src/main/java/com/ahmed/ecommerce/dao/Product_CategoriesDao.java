@@ -1,6 +1,6 @@
 package com.ahmed.ecommerce.dao;
 
-import com.ahmed.ecommerce.RowMapper.ProductRowMapper;
+import com.ahmed.ecommerce.rowmapper.ProductRowMapper;
 import com.ahmed.ecommerce.model.Product;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

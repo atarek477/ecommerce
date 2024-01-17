@@ -2,7 +2,10 @@ package com.ahmed.ecommerce.services;
 
 
 import com.ahmed.ecommerce.dao.IProductDao;
+import com.ahmed.ecommerce.exception.DatabaseInsertException;
+import com.ahmed.ecommerce.exception.NotFoundException;
 import com.ahmed.ecommerce.model.Product;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,13 +22,24 @@ public class ProductServices {
 
     public List<Product> getAllProduct(){
 
-       return iProductDao.getAllProductDao();
+        List<Product> allProductDao = iProductDao.getAllProductDao();
+        if(allProductDao.isEmpty()){
+
+            throw new NotFoundException("no product found");
+        }
+
+
+        return allProductDao;
 
     }
 
     public void insertProduct(Product product){
 
-        iProductDao.insertProductDao(product);
+        try {
+            iProductDao.insertProductDao(product);
+        } catch (DataAccessException ex) {
+            throw new DatabaseInsertException("Error inserting product into the database", ex);
+        }
     }
 
 }

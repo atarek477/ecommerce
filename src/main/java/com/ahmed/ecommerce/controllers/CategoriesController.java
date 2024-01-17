@@ -4,6 +4,7 @@ import com.ahmed.ecommerce.services.CategoriesServices;
 import com.ahmed.ecommerce.model.Categories;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,7 +25,7 @@ public class CategoriesController {
 
     }
     @PostMapping("/api/categories/insert")
-    public void insertCategories(Categories categories){
+    public void insertCategories(@RequestBody Categories categories){
         categoriesServices.insertCategories(categories);
     }
 }

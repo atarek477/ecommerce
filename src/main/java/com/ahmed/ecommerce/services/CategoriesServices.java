@@ -1,7 +1,10 @@
 package com.ahmed.ecommerce.services;
 
 import com.ahmed.ecommerce.dao.ICategories;
+import com.ahmed.ecommerce.exception.DatabaseInsertException;
+import com.ahmed.ecommerce.exception.NotFoundException;
 import com.ahmed.ecommerce.model.Categories;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,12 +19,20 @@ public class CategoriesServices {
     }
 
     public List<Categories> getAllCategories(){
-        return iCategories.getAllCategoriesDao();
+        List<Categories> allCategoriesDao = iCategories.getAllCategoriesDao();
+          if(allCategoriesDao.isEmpty()){
 
+              throw new NotFoundException("No categories found.");
+          }
+          return allCategoriesDao;
     }
 
     public void insertCategories(Categories categories){
-        iCategories.insertCategoriesDao(categories);
+        try {
+            iCategories.insertCategoriesDao(categories);
+        } catch (DataAccessException ex) {
+            throw new DatabaseInsertException("Error inserting categories into the database", ex);
+        }
     }
 
 

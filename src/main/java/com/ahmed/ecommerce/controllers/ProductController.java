@@ -5,6 +5,7 @@ import com.ahmed.ecommerce.services.ProductServices;
 import com.ahmed.ecommerce.model.Product;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,7 +25,7 @@ private final ProductServices productServices;
     }
 
     @PostMapping("/api/product/insert")
-    public void insertProductController(Product product){
+    public void insertProductController(@RequestBody Product product){
         productServices.insertProduct(product);
 
     }
